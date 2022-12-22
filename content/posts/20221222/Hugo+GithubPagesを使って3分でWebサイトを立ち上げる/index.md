@@ -16,7 +16,7 @@ draft: false
 
 ### 1. リモートリポジトリを作る (30秒)
 まずはGithubにリモートリポジトリを作っておきましょう。<br>
-![github-0](../../static/20221222/github-0.png)
+![リモートリポジトリの作成](./img/github0.png)
 今回はリポジトリ名を「mysite」にしました。<br>
 
 ### 2. Hugoのインストール　(15秒)
@@ -122,7 +122,7 @@ git push -u origin main
 ### 7. Pagesで公開する　(15秒)
 pushしたリポジトリのSettingsタブからPagesを開き、Branchをgh-pagesに変更します。<br>
 ディレクトリはrootを指定してSave、これでActionsのビルド+Pushが終われば確認できるはずです。<br>
-![github-1](../../static/20221222/github-1.png)
+![GitHubActionsの設定](./img/github1.png)
 
 ## お疲れ様でした
 このブログもここに書いた手法と同じように作成したものなので、大体同じようなものが出来てると思います。<br>
