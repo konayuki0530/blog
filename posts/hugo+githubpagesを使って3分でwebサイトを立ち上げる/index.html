@@ -1,68 +1,62 @@
 <!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Hugo+GithubPagesを使って3分でWebサイトを立ち上げる | konayuki14210 Blog</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="この記事は TDU Advbent Calendar 2022 22日目の記事です。
 初めに 世にはいろいろなブログサービスやCMSやらが溢れていますが、かなりお手軽に個人の静的サイト構築できる方法としてHugo+GithubPagesが挙げられるのではないかと勝手に思っています。 私自身、Hugoに触れたのは最近のことだったのですが、あまりにスムーズに構築できたので感動しました。 ので、今回は慣れていれば3分ほどで出来そうな静的サイト構築の手順を備忘録がわりに記載しておこうと思った次第です。
 構築していこう！ はい、構築していきます。
-リモートリポジトリを作る(30秒) まずはGithubにリモートリポジトリを作っておきましょう。
-今回はリポジトリ名を「mysite」にしました。
-Hugoのインストール(30秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
+1. リモートリポジトリを作る (30秒) まずはGithubにリモートリポジトリを作っておきましょう。 今回はリポジトリ名を「mysite」にしました。
+2. Hugoのインストール　(15秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
 $ brew install hugo 自分はbrewで入れました。
-サイトの作成(15秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
-$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . テーマの導入と設定(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
+3. サイトの作成　(30秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
+$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . 4. テーマの導入と設定　(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke テーマの反映にはconfig.tomlを変更する必要があります。 themeの行を追加し、anankeを指定します。 ついでにbaseURLもリポジトリの名前を追加しておきます
-theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; ページの追加 ページを追加しましょう。
-$ hugo new posts/hello-world.md .mdファイルが作成されるので記事を書きます。 &mdash;で囲まれたメタ情報部分の"><meta name=generator content="Hugo 0.108.0"><meta name=robots content="noindex, nofollow"><link rel=stylesheet href=/blog/ananke/css/main.min.css><meta property="og:title" content="Hugo+GithubPagesを使って3分でWebサイトを立ち上げる"><meta property="og:description" content="この記事は TDU Advbent Calendar 2022 22日目の記事です。
+theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; 5."><meta name=generator content="Hugo 0.108.0"><meta name=robots content="noindex, nofollow"><link rel=stylesheet href=/blog/ananke/css/main.min.css><meta property="og:title" content="Hugo+GithubPagesを使って3分でWebサイトを立ち上げる"><meta property="og:description" content="この記事は TDU Advbent Calendar 2022 22日目の記事です。
 初めに 世にはいろいろなブログサービスやCMSやらが溢れていますが、かなりお手軽に個人の静的サイト構築できる方法としてHugo+GithubPagesが挙げられるのではないかと勝手に思っています。 私自身、Hugoに触れたのは最近のことだったのですが、あまりにスムーズに構築できたので感動しました。 ので、今回は慣れていれば3分ほどで出来そうな静的サイト構築の手順を備忘録がわりに記載しておこうと思った次第です。
 構築していこう！ はい、構築していきます。
-リモートリポジトリを作る(30秒) まずはGithubにリモートリポジトリを作っておきましょう。
-今回はリポジトリ名を「mysite」にしました。
-Hugoのインストール(30秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
+1. リモートリポジトリを作る (30秒) まずはGithubにリモートリポジトリを作っておきましょう。 今回はリポジトリ名を「mysite」にしました。
+2. Hugoのインストール　(15秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
 $ brew install hugo 自分はbrewで入れました。
-サイトの作成(15秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
-$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . テーマの導入と設定(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
+3. サイトの作成　(30秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
+$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . 4. テーマの導入と設定　(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke テーマの反映にはconfig.tomlを変更する必要があります。 themeの行を追加し、anankeを指定します。 ついでにbaseURLもリポジトリの名前を追加しておきます
-theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; ページの追加 ページを追加しましょう。
-$ hugo new posts/hello-world.md .mdファイルが作成されるので記事を書きます。 &mdash;で囲まれたメタ情報部分の"><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/blog/posts/hugo+githubpages%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A63%E5%88%86%E3%81%A7web%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-12-22T20:11:30+09:00"><meta property="article:modified_time" content="2022-12-22T20:11:30+09:00"><meta itemprop=name content="Hugo+GithubPagesを使って3分でWebサイトを立ち上げる"><meta itemprop=description content="この記事は TDU Advbent Calendar 2022 22日目の記事です。
+theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; 5."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/blog/posts/hugo+githubpages%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A63%E5%88%86%E3%81%A7web%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-12-22T20:11:30+09:00"><meta property="article:modified_time" content="2022-12-22T20:11:30+09:00"><meta itemprop=name content="Hugo+GithubPagesを使って3分でWebサイトを立ち上げる"><meta itemprop=description content="この記事は TDU Advbent Calendar 2022 22日目の記事です。
 初めに 世にはいろいろなブログサービスやCMSやらが溢れていますが、かなりお手軽に個人の静的サイト構築できる方法としてHugo+GithubPagesが挙げられるのではないかと勝手に思っています。 私自身、Hugoに触れたのは最近のことだったのですが、あまりにスムーズに構築できたので感動しました。 ので、今回は慣れていれば3分ほどで出来そうな静的サイト構築の手順を備忘録がわりに記載しておこうと思った次第です。
 構築していこう！ はい、構築していきます。
-リモートリポジトリを作る(30秒) まずはGithubにリモートリポジトリを作っておきましょう。
-今回はリポジトリ名を「mysite」にしました。
-Hugoのインストール(30秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
+1. リモートリポジトリを作る (30秒) まずはGithubにリモートリポジトリを作っておきましょう。 今回はリポジトリ名を「mysite」にしました。
+2. Hugoのインストール　(15秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
 $ brew install hugo 自分はbrewで入れました。
-サイトの作成(15秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
-$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . テーマの導入と設定(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
+3. サイトの作成　(30秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
+$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . 4. テーマの導入と設定　(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke テーマの反映にはconfig.tomlを変更する必要があります。 themeの行を追加し、anankeを指定します。 ついでにbaseURLもリポジトリの名前を追加しておきます
-theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; ページの追加 ページを追加しましょう。
-$ hugo new posts/hello-world.md .mdファイルが作成されるので記事を書きます。 &mdash;で囲まれたメタ情報部分の"><meta itemprop=datePublished content="2022-12-22T20:11:30+09:00"><meta itemprop=dateModified content="2022-12-22T20:11:30+09:00"><meta itemprop=wordCount content="176"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Hugo+GithubPagesを使って3分でWebサイトを立ち上げる"><meta name=twitter:description content="この記事は TDU Advbent Calendar 2022 22日目の記事です。
+theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; 5."><meta itemprop=datePublished content="2022-12-22T20:11:30+09:00"><meta itemprop=dateModified content="2022-12-22T20:11:30+09:00"><meta itemprop=wordCount content="217"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Hugo+GithubPagesを使って3分でWebサイトを立ち上げる"><meta name=twitter:description content="この記事は TDU Advbent Calendar 2022 22日目の記事です。
 初めに 世にはいろいろなブログサービスやCMSやらが溢れていますが、かなりお手軽に個人の静的サイト構築できる方法としてHugo+GithubPagesが挙げられるのではないかと勝手に思っています。 私自身、Hugoに触れたのは最近のことだったのですが、あまりにスムーズに構築できたので感動しました。 ので、今回は慣れていれば3分ほどで出来そうな静的サイト構築の手順を備忘録がわりに記載しておこうと思った次第です。
 構築していこう！ はい、構築していきます。
-リモートリポジトリを作る(30秒) まずはGithubにリモートリポジトリを作っておきましょう。
-今回はリポジトリ名を「mysite」にしました。
-Hugoのインストール(30秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
+1. リモートリポジトリを作る (30秒) まずはGithubにリモートリポジトリを作っておきましょう。 今回はリポジトリ名を「mysite」にしました。
+2. Hugoのインストール　(15秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
 $ brew install hugo 自分はbrewで入れました。
-サイトの作成(15秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
-$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . テーマの導入と設定(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
+3. サイトの作成　(30秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
+$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . 4. テーマの導入と設定　(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke テーマの反映にはconfig.tomlを変更する必要があります。 themeの行を追加し、anankeを指定します。 ついでにbaseURLもリポジトリの名前を追加しておきます
-theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; ページの追加 ページを追加しましょう。
-$ hugo new posts/hello-world.md .mdファイルが作成されるので記事を書きます。 &mdash;で囲まれたメタ情報部分の"></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/blog/ class="f3 fw2 hover-white no-underline white-90 dib">konayuki14210 Blog</a><div class="flex-l items-center"><div class=ananke-socials></div></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POSTS</aside><div id=sharing class="mt3 ananke-socials"></div><h1 class="f1 athelas mt3 mb1">Hugo+GithubPagesを使って3分でWebサイトを立ち上げる</h1><time class="f6 mv4 dib tracked" datetime=2022-12-22T20:11:30+09:00>December 22, 2022</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>この記事は <a href=https://qiita.com/advent-calendar/2022/tdu>TDU Advbent Calendar 2022 22日目</a>の記事です。</p><h2 id=初めに>初めに</h2><p>世にはいろいろなブログサービスやCMSやらが溢れていますが、かなりお手軽に個人の静的サイト構築できる方法としてHugo+GithubPagesが挙げられるのではないかと勝手に思っています。
+theme = &#34;ananke&#34; baseURL = &#34;http://example.org/mysite/&#34; languageCode = &#34;en-us&#34; title = &#34;My New Hugo Site&#34; 5."></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/blog/ class="f3 fw2 hover-white no-underline white-90 dib">konayuki14210 Blog</a><div class="flex-l items-center"><div class=ananke-socials></div></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l flex-wrap justify-between mw8 center ph3"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked">POSTS</aside><div id=sharing class="mt3 ananke-socials"></div><h1 class="f1 athelas mt3 mb1">Hugo+GithubPagesを使って3分でWebサイトを立ち上げる</h1><time class="f6 mv4 dib tracked" datetime=2022-12-22T20:11:30+09:00>December 22, 2022</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>この記事は <a href=https://qiita.com/advent-calendar/2022/tdu>TDU Advbent Calendar 2022 22日目</a>の記事です。</p><h2 id=初めに>初めに</h2><p>世にはいろいろなブログサービスやCMSやらが溢れていますが、かなりお手軽に個人の静的サイト構築できる方法としてHugo+GithubPagesが挙げられるのではないかと勝手に思っています。
 私自身、Hugoに触れたのは最近のことだったのですが、あまりにスムーズに構築できたので感動しました。
-ので、今回は慣れていれば3分ほどで出来そうな静的サイト構築の手順を備忘録がわりに記載しておこうと思った次第です。</p><h2 id=構築していこう>構築していこう！</h2><p>はい、構築していきます。</p><h3 id=リモートリポジトリを作る30秒>リモートリポジトリを作る(30秒)</h3><p>まずはGithubにリモートリポジトリを作っておきましょう。</p><p>今回はリポジトリ名を「mysite」にしました。</p><h3 id=hugoのインストール30秒>Hugoのインストール(30秒)</h3><p>自分の環境にHugoをインストールしましょう。
+ので、今回は慣れていれば3分ほどで出来そうな静的サイト構築の手順を備忘録がわりに記載しておこうと思った次第です。</p><h2 id=構築していこう>構築していこう！</h2><p>はい、構築していきます。</p><h3 id=1-リモートリポジトリを作る-30秒>1. リモートリポジトリを作る (30秒)</h3><p>まずはGithubにリモートリポジトリを作っておきましょう。
+<img src=../../static/20221222/github-0.png alt=github-0>
+今回はリポジトリ名を「mysite」にしました。</p><h3 id=2-hugoのインストール15秒>2. Hugoのインストール　(15秒)</h3><p>自分の環境にHugoをインストールしましょう。
 公式のクイックスタート通りにやれば特に問題ないはず。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ brew install hugo
-</span></span></code></pre></div><p>自分はbrewで入れました。</p><h3 id=サイトの作成15秒>サイトの作成(15秒)</h3><p>インストールできたら早速サイトの方を作っていきます。
+</span></span></code></pre></div><p>自分はbrewで入れました。</p><h3 id=3-サイトの作成30秒>3. サイトの作成　(30秒)</h3><p>インストールできたら早速サイトの方を作っていきます。
 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ hugo new site <span style=color:#f92672>[</span>githubのusername<span style=color:#f92672>]</span>.github.io
 </span></span><span style=display:flex><span>$ cd <span style=color:#f92672>[</span>githubのusername<span style=color:#f92672>]</span>.github.io
 </span></span><span style=display:flex><span>$ git init .
-</span></span></code></pre></div><h3 id=テーマの導入と設定30秒>テーマの導入と設定(30秒)</h3><p>Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+</span></span></code></pre></div><h3 id=4-テーマの導入と設定30秒>4. テーマの導入と設定　(30秒)</h3><p>Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 </span></span></code></pre></div><p>テーマの反映にはconfig.tomlを変更する必要があります。
 themeの行を追加し、anankeを指定します。
 ついでにbaseURLもリポジトリの名前を追加しておきます</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>theme <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ananke&#34;</span>
 </span></span><span style=display:flex><span>baseURL <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;http://example.org/mysite/&#34;</span>
 </span></span><span style=display:flex><span>languageCode <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;en-us&#34;</span>
 </span></span><span style=display:flex><span>title <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;My New Hugo Site&#34;</span>
-</span></span></code></pre></div><h3 id=ページの追加>ページの追加</h3><p>ページを追加しましょう。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ hugo new posts/hello-world.md
+</span></span></code></pre></div><h3 id=5-ページの追加30秒>5. ページの追加　(30秒)</h3><p>ページを追加しましょう。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ hugo new posts/hello-world.md
 </span></span></code></pre></div><p>.mdファイルが作成されるので記事を書きます。
 &mdash;で囲まれたメタ情報部分の</p><pre tabindex=0><code>draft: true
 </code></pre><p>をfalseに変更することで記事が公開状態になり、サイト上に表示されます。
 ローカルで確認する場合は、</p><pre tabindex=0><code>hugo serve
-</code></pre><p>とすることで http://localhost:1313 に立ち上がります。</p><h3 id=github-actionsを設定する>Github Actionsを設定する</h3><p>Actionsを作って下さっている方がいるのでこちらを使用していきます。
+</code></pre><p>とすることで http://localhost:1313 に立ち上がります。</p><h3 id=6-github-actionsを設定する30秒>6. Github Actionsを設定する　(30秒)</h3><p>Actionsを作って下さっている方がいるのでこちらを使用していきます。
 <a href=https://github.com/peaceiris/actions-hugo>https://github.com/peaceiris/actions-hugo</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>GitHub Pages</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
@@ -99,4 +93,13 @@ themeの行を追加し、anankeを指定します。
 </span></span><span style=display:flex><span>          <span style=color:#f92672>publish_dir</span>: <span style=color:#ae81ff>./public</span>
 </span></span></code></pre></div><p>細かく設定できるのですが、とりあえずコピペでOKです。
 .github/workflows/gh-pages.yml に保存します。
-あとは先ほど作成したリポジトリにpushするだけで自動でActionsが走り、ビルドとデプロイを行なってくれます。とっても便利！</p><h3 id=pagesで公開する>Pagesで公開する</h3><p>pushしたリポジトリのSettingsタブからPagesを開き、</p><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=http://example.org/blog/>&copy; konayuki14210 Blog 2022</a><div><div class=ananke-socials></div></div></div></footer></body></html>
+あとは先ほど作成したリポジトリにpushするだけで自動でActionsが走り、ビルドとデプロイを行なってくれます。とっても便利！</p><pre tabindex=0><code>git remote add origin git@github.com:[githubのusername]/mysite.git
+git branch -M main
+git add --all
+git commit -m &#39;first commit&#39;
+git push -u origin main
+</code></pre><h3 id=7-pagesで公開する15秒>7. Pagesで公開する　(15秒)</h3><p>pushしたリポジトリのSettingsタブからPagesを開き、Branchをgh-pagesに変更します。
+ディレクトリはrootを指定してSave、これでActionsのビルド+Pushが終われば確認できるはずです。
+<img src=../../static/20221222/github-1.png alt=github-1></p><h2 id=お疲れ様でした>お疲れ様でした</h2><p>このブログもここに書いた手法と同じように作成したものなので、大体同じようなものが出来てると思います。
+近年では個人サイトの時代が再来しそうな雰囲気もしてきているので皆さんご自身のサイトをこの機会に持ってみてもいいのではないでしょうか？
+それではお体に気をつけて良い年末をお過ごしください！</p><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=http://example.org/blog/>&copy; konayuki14210 Blog 2022</a><div><div class=ananke-socials></div></div></div></footer></body></html>

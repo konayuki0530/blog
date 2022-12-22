@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>konayuki14210 Blog</title><link>http://example.org/blog/</link><description>Recent content on konayuki14210 Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 22 Dec 2022 20:11:30 +0900</lastBuildDate><atom:link href="http://example.org/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo+GithubPagesを使って3分でWebサイトを立ち上げる</title><link>http://example.org/blog/posts/hugo+githubpages%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A63%E5%88%86%E3%81%A7web%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/</link><pubDate>Thu, 22 Dec 2022 20:11:30 +0900</pubDate><guid>http://example.org/blog/posts/hugo+githubpages%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A63%E5%88%86%E3%81%A7web%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/</guid><description>この記事は TDU Advbent Calendar 2022 22日目の記事です。
 初めに 世にはいろいろなブログサービスやCMSやらが溢れていますが、かなりお手軽に個人の静的サイト構築できる方法としてHugo+GithubPagesが挙げられるのではないかと勝手に思っています。 私自身、Hugoに触れたのは最近のことだったのですが、あまりにスムーズに構築できたので感動しました。 ので、今回は慣れていれば3分ほどで出来そうな静的サイト構築の手順を備忘録がわりに記載しておこうと思った次第です。
 構築していこう！ はい、構築していきます。
-リモートリポジトリを作る(30秒) まずはGithubにリモートリポジトリを作っておきましょう。
-今回はリポジトリ名を「mysite」にしました。
-Hugoのインストール(30秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
+1. リモートリポジトリを作る (30秒) まずはGithubにリモートリポジトリを作っておきましょう。 今回はリポジトリ名を「mysite」にしました。
+2. Hugoのインストール　(15秒) 自分の環境にHugoをインストールしましょう。 公式のクイックスタート通りにやれば特に問題ないはず。
 $ brew install hugo 自分はbrewで入れました。
-サイトの作成(15秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
-$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . テーマの導入と設定(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
+3. サイトの作成　(30秒) インストールできたら早速サイトの方を作っていきます。 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。
+$ hugo new site [githubのusername].github.io $ cd [githubのusername].github.io $ git init . 4. テーマの導入と設定　(30秒) Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke テーマの反映にはconfig.tomlを変更する必要があります。 themeの行を追加し、anankeを指定します。 ついでにbaseURLもリポジトリの名前を追加しておきます
-theme = &amp;#34;ananke&amp;#34; baseURL = &amp;#34;http://example.org/mysite/&amp;#34; languageCode = &amp;#34;en-us&amp;#34; title = &amp;#34;My New Hugo Site&amp;#34; ページの追加 ページを追加しましょう。
-$ hugo new posts/hello-world.md .mdファイルが作成されるので記事を書きます。 &amp;mdash;で囲まれたメタ情報部分の</description></item><item><title>Hello World</title><link>http://example.org/blog/posts/hello-world/</link><pubDate>Mon, 12 Dec 2022 20:32:22 +0900</pubDate><guid>http://example.org/blog/posts/hello-world/</guid><description>色々サービスを試したけどHugo+GitHubPagesに落ち着いた。 速攻立ち上げられたので正直驚いている。</description></item></channel></rss>
+theme = &amp;#34;ananke&amp;#34; baseURL = &amp;#34;http://example.org/mysite/&amp;#34; languageCode = &amp;#34;en-us&amp;#34; title = &amp;#34;My New Hugo Site&amp;#34; 5.</description></item><item><title>Hello World</title><link>http://example.org/blog/posts/hello-world/</link><pubDate>Mon, 12 Dec 2022 20:32:22 +0900</pubDate><guid>http://example.org/blog/posts/hello-world/</guid><description>色々サービスを試したけどHugo+GitHubPagesに落ち着いた。 速攻立ち上げられたので正直驚いている。</description></item></channel></rss>
