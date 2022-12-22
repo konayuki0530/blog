@@ -14,12 +14,12 @@ draft: false
 ## 構築していこう！
 はい、構築していきます。<br>
 
-### リモートリポジトリを作る(30秒)
+### 1. リモートリポジトリを作る (30秒)
 まずはGithubにリモートリポジトリを作っておきましょう。<br>
-
+![github-0](../../static/20221222/github-0.png)
 今回はリポジトリ名を「mysite」にしました。<br>
 
-### Hugoのインストール(30秒)
+### 2. Hugoのインストール　(15秒)
 自分の環境にHugoをインストールしましょう。<br>
 公式のクイックスタート通りにやれば特に問題ないはず。<br>
 ```sh
@@ -27,7 +27,7 @@ $ brew install hugo
 ```
 自分はbrewで入れました。<br>
 
-### サイトの作成(15秒)
+### 3. サイトの作成　(30秒)
 インストールできたら早速サイトの方を作っていきます。<br>
 今回はpagesで公開するのでgithubのユーザー名から以下のような形で生成します。<br>
 ```sh
@@ -36,7 +36,7 @@ $ cd [githubのusername].github.io
 $ git init .
 ```
 
-### テーマの導入と設定(30秒)
+### 4. テーマの導入と設定　(30秒)
 Hugoにはいろいろなテーマがあるのですが、今回はクイックスタートでも使われている「ananke」を使っていきます<br>
 ```sh
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
@@ -51,7 +51,7 @@ languageCode = "en-us"
 title = "My New Hugo Site"
 ```
 
-### ページの追加
+### 5. ページの追加　(30秒)
 ページを追加しましょう。<br>
 ```sh
 $ hugo new posts/hello-world.md
@@ -68,7 +68,7 @@ hugo serve
 ```
 とすることで http://localhost:1313 に立ち上がります。<br>
 
-### Github Actionsを設定する
+### 6. Github Actionsを設定する　(30秒)
 Actionsを作って下さっている方がいるのでこちらを使用していきます。<br>
 https://github.com/peaceiris/actions-hugo
 
@@ -111,7 +111,20 @@ jobs:
 細かく設定できるのですが、とりあえずコピペでOKです。<br>
 .github/workflows/gh-pages.yml に保存します。<br>
 あとは先ほど作成したリポジトリにpushするだけで自動でActionsが走り、ビルドとデプロイを行なってくれます。とっても便利！<br>
+```
+git remote add origin git@github.com:[githubのusername]/mysite.git
+git branch -M main
+git add --all
+git commit -m 'first commit'
+git push -u origin main
+```
 
-### Pagesで公開する
-pushしたリポジトリのSettingsタブからPagesを開き、
+### 7. Pagesで公開する　(15秒)
+pushしたリポジトリのSettingsタブからPagesを開き、Branchをgh-pagesに変更します。<br>
+ディレクトリはrootを指定してSave、これでActionsのビルド+Pushが終われば確認できるはずです。<br>
+![github-1](../../static/20221222/github-1.png)
 
+## お疲れ様でした
+このブログもここに書いた手法と同じように作成したものなので、大体同じようなものが出来てると思います。<br>
+近年では個人サイトの時代が再来しそうな雰囲気もしてきているので皆さんご自身のサイトをこの機会に持ってみてもいいのではないでしょうか？<br>
+それではお体に気をつけて良い年末をお過ごしください！<br>
