@@ -3,7 +3,7 @@ title: "ポケモンSVのグリッチを自動化する"
 date: 2022-12-23T21:14:27+09:00
 draft: false
 ---
-この記事は [TDU Advbent Calendar 2022 22日目](https://qiita.com/advent-calendar/2022/tdu)の記事です。
+この記事は [TDU Advbent Calendar 2022 23日目](https://qiita.com/advent-calendar/2022/tdu)の記事です。
 
 「ポケットモンスター スカーレット・バイオレット」には現時点（v1.1.0）でポケモンに持たせられるアイテムを増殖させるグリッチ、通称:増殖バグが存在します。\
 もちろんBANされる可能性はありますし、そもそも倫理的によろしくない行為であることは間違いないので使用は自己責任になります。\
